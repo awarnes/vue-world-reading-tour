@@ -1,45 +1,46 @@
 # vue-world-reading-tour
 
-This template should help get you started developing with Vue 3 in Vite.
+Site for helping me track reading books from each country in the world. Map data taken from [amcharts](https://www.amcharts.com/svg-maps/?map=world).
 
-## Recommended IDE Setup
+Book recommendations taken primarily from [WhichBook](https://www.whichbook.net/world-map/)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Could pull more from API than top 25:
 
-## Type Support for `.vue` Imports in TS
+- AF
+- AR
+- AT
+- AU
+- BR
+- CA
+- CH
+- CN
+- CZ
+- DE
+- EG
+- ES
+- FI
+- FR
+- GR
+- IE
+- IL
+- IN
+- IQ
+- IT
+- JP
+- KR
+- LB
+- MX
+- NG
+- NL
+- NO
+- NZ
+- PK
+- PL
+- SE
+- TR
+- ZA
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Other resources:
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- [A year of reading around the world](https://ayearofreadingtheworld.com/thelist/)
+- [Wikipedia Novels By Country](https://en.wikipedia.org/wiki/Category:Novels_by_country)

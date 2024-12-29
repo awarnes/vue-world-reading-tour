@@ -5,7 +5,9 @@ import BookList from './BookList.vue'
 import type { Book, Country } from '../types'
 import { computed, defineExpose, ref } from 'vue'
 
-const countries = computed(() => countriesJson.filter((country) => country.display)) as unknown as Country[]
+const countries = computed(() =>
+  countriesJson.filter((country) => country.display),
+) as unknown as Country[]
 
 const dialog = ref<HTMLDialogElement>()
 const countryId = ref('')
@@ -41,7 +43,12 @@ defineExpose({
   <div class="scrolling">
     <svg id="map" :transform="`scale(${scale}) translate(${50 * scale * 4},${50 * scale * 2})`">
       <g>
-        <CountrySelect v-for="country in countries" :key="country.id" :country="country" @click="showModal(country)" />
+        <CountrySelect
+          v-for="country in countries"
+          :key="country.id"
+          :country="country"
+          @click="showModal(country)"
+        />
       </g>
     </svg>
   </div>

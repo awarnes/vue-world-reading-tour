@@ -1,5 +1,5 @@
 export type Book = {
-  id: string
+  id: number
   title: string
   author: string
   read: string
@@ -8,6 +8,7 @@ export type Book = {
 
 export type Country = {
   id: string
+  display: boolean
   title: string
   path: string
   books: Book[]

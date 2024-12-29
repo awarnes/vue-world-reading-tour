@@ -1,10 +1,11 @@
 <script setup lang="ts">
-const { books } = defineProps<{ books: { id: string; title: string; author: string }[] }>()
+import type { Book } from '../types'
+const { books } = defineProps<{ books: Book[] }>()
 </script>
 
 <template>
   <ul>
-    <li v-for="book in books" :key="book.id">
+    <li v-for="book in books" :key="book.id" :class="!!book.read ? 'read' : ''">
       <a
         :href="`https://libbyapp.com/search/multcolib/search/scope-auto/query-${encodeURI(book.title)}/page-1`"
         >{{ book.title }}</a
@@ -17,3 +18,9 @@ const { books } = defineProps<{ books: { id: string; title: string; author: stri
     </li>
   </ul>
 </template>
+
+<style>
+.read {
+  list-style-image: url('../assets/check-mark.svg');
+}
+</style>

@@ -1,42 +1,34 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-
-type Country = {
-  id: string
-  title: string
-  path: string
-  books: {
-    read: string | null
-    [k: string]: string
-  }[]
-}
+import type { Country } from '../types'
 
 const { country } = defineProps<{
   country: Country
 }>()
 
 const isHovered = ref(false)
+
 const anyRead = computed(() =>
-  books.reduce((read, book) => {
-    read = !!book.read
+  country.books.reduce((read, book) => {
+    read = read || !!book.read
     return read
   }, false),
 )
 
-const emit = defineEmits<{
-  (e: 'show-modal', country): void
-}>()
+// Will need to fill these in and remove this at some point
+const hasBooks = computed(() => country.books.length > 0)
 </script>
 
 <template>
   <path
-    :fill="isHovered ? 'purple' : anyRead ? 'green' : 'black'"
+    stroke="white"
+    stroke-width=".25"
+    :fill="isHovered ? 'purple' : anyRead ? 'green' : hasBooks ? 'black' : 'gray'"
     :id="country.id"
     :title="country.title"
     :d="country.path"
     @mouseover="isHovered = true"
     @mouseleave="isHovered = false"
-    @click="emit('show-modal', country)"
   >
   </path>
 </template>
